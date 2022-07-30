@@ -19,6 +19,69 @@ h1 {
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 65vh;
+    align-content: center;
+    width: 60%;
+    margin-top: 6rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;    
+}
+.board::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+/* border cells */
+.board-cell {
+    height: 175px;
     border: 1px solid black;
+}
+.board-cell:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, .5);
+    filter: blur(100px);
+}
+.board-cell:first-child, .board-cell:nth-child(2), .board-cell:nth-child(3) {
+    border-top: none;
+}
+.board-cell:nth-child(1), .board-cell:nth-child(4), .board-cell:nth-child(7) {
+    border-left: none;
+}
+.board-cell:nth-child(3), .board-cell:nth-child(6), .board-cell:last-child {
+    border-right: none;
+}
+.board-cell:nth-child(7), .board-cell:nth-child(8), .board-cell:last-child {
+    border-bottom: none;
+}
+/* footer area */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.footer-content img {
+    margin-left: 10px;
+}
+.footer-content a:hover img {
+    transition: .5s;
+    transform: rotateY(360deg);
+    filter: invert(40%) sepia(38%) saturate(1579%) hue-rotate(330deg) brightness(83%) contrast(96%);
 }

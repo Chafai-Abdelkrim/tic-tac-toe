@@ -53,6 +53,7 @@ h1 {
 .board-cell {
     height: 175px;
     border: 1px solid black;
+    z-index: 0;
 }
 .board-cell:hover {
     cursor: pointer;
@@ -70,6 +71,17 @@ h1 {
 }
 .board-cell:nth-child(7), .board-cell:nth-child(8), .board-cell:last-child {
     border-bottom: none;
+}
+/* X or O input area inside the cell div*/
+.xoText {
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    user-select: none;
+    font-size: 6.5rem;
+    z-index: 1;
 }
 /* restart button */
 .resetBtn {
@@ -93,6 +105,14 @@ h1 {
 .resetBtn:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+/* winner class */
+.winner {
+    color: #DEF7E7;
+}
+/* drax class */
+.draw {
+    color: #E9B57D;
 }
 /* footer area */
 footer {

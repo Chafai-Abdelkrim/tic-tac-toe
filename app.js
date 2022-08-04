@@ -43,7 +43,7 @@ const Board = (() => {
                 &&boardArray[winningCombination[i][0]] === boardArray[winningCombination[i][1]]
                 && boardArray[winningCombination[i][1]] === boardArray[winningCombination[i][2]]){
                     gameOver = true;
-                    winnersCombination = winnersCombination[i];
+                    winnersCombination = winningCombination[i];
             }
         };
         return winnersCombination;
@@ -70,11 +70,12 @@ const displayBoard = (() => {
         infoText.classList.add("infoText");
         infoText.textContent = "Press on a box to start a game";
         
-        const cell = document.querySelector(".board-cell");
+        const cell = document.querySelectorAll(".board-cell");
         for (let i = 0; i < 9; i++) {
+            
             const xoText = document.createElement("p");
             xoText.classList.add("xoText");
-            cell.appendChild(xoText);
+            cell[i].appendChild(xoText);
         }
 
         const button = document.createElement("button");

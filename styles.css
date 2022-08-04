@@ -57,8 +57,7 @@ h1 {
 }
 .board-cell:hover {
     cursor: pointer;
-    box-shadow: inset 0 0 200px rgba(0, 0, 0, .5);
-    filter: blur(100px);
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, .2);
 }
 .board-cell:first-child, .board-cell:nth-child(2), .board-cell:nth-child(3) {
     border-top: none;
@@ -112,7 +111,7 @@ h1 {
 }
 /* drax class */
 .draw {
-    color: #E9B57D;
+    color: orangered;
 }
 /* footer area */
 footer {
